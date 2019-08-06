@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication Table</title>
+        <style>
+            .cell {
+                display: inline-block;
+                width: 30px; height: 30px;
+                text-align: right;
+            }
+            .header {
+                background: lightblue;
+            }
+        </style>
+        link rel = "stylesheet"
+        type = "text/css"
+        href = "style.css"
+    </head>
+    <body>
+        <h1>Multiplication Table</h1>
+        <script>
+            // output the header row
+            document.write('<span class="cell header">&times;</span>');
+            for (let i = 0; i <= 10; i++) {
+                document.write('<span class="cell header">' + i + '</span>');
+            }
+            document.write('<br>');
+            // TODO: Write two nested for loops to output the rest of the multiplication table
+        </script>
+                    <!-- Below is navigation and comments added after the fact.  Last edit 8/2/2019-->
+<!-- Note to self:  add the following html code to the header on new pages:
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" >
+
+   And then make sure to copy over the style.css sheet.  ;-)
+   -->
+<hr>
+<hr>
+<!-- Below is sidebar nav adapted from https://www.w3schools.com/howto/howto_js_off-canvas.asp-->
+<!-- Use button to open the sidenav -->
+
+<button onclick="openNav()">Click for More Projects</button>
+
+
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <p>Current: Interactive Random Gif Button.</p>
+    <hr>
+    <p>Previous: My first Interactive Web Page.<p>
+    <a href="https://Janell.gitlab.io/s_click-handlers">Previous Projext</a>
+    <hr>
+    <p>Next: Practicing Loops.</p>
+    <a href="https://Janell.gitlab.io/panda-page">Next Projext - correct link pls</a>
+  
+  <br>
+</div>
+
+<script>
+/* Set the width of the side navigation to 250px  */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+            <!-- Below is navigation and comments added after the fact.  Last edit 8/2/2019-->
+<!-- Note to self:  add the following html code to the header on new pages:
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" >
+
+   And then make sure to copy over the style.css sheet.  ;-)
+   -->
+<hr>
+<hr>
+<!-- Below is sidebar nav adapted from https://www.w3schools.com/howto/howto_js_off-canvas.asp-->
+<!-- Use button to open the sidenav -->
+
+<button onclick="openNav()">Click for More Projects</button>
+
+
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <p>Current: Multiplication Table.</p>
+    <hr>
+    <p>Previous: Cute Animals Enjoying the Snow.<p>
+    <a href="https://Janell.gitlab.io/panda-page">Previous Projext</a>
+    <hr>
+    <p>Next: Practicing Loops.</p>
+    <a href="https://Janell.gitlab.io/multiplication-table">Next Projext - To Be Determined</a>
+  
+  <br>
+</div>
+
+<script>
+/* Set the width of the side navigation to 250px  */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<!-- Bonus
+For an additional challenge:
+
+Provide controls to allow generating tables of different sizes (e.g. 12x12, 16x16)
+Provide controls to change the colors or styles of the table on the fly.
+Submission
+Push your code into your GitLab repository and use the GitLab Pages feature to allow your site to be viewed directly. Please submit the published gitlab pages url below.
+!--> 
+    </body>
+</html>
+
