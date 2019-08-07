@@ -12,9 +12,9 @@
                 background: lightblue;
             }
         </style>
-        link rel = "stylesheet"
+        <link rel = "stylesheet"
         type = "text/css"
-        href = "style.css"
+        href = "style.css">
     </head>
     <body>
         <h1>Multiplication Table</h1>
@@ -25,49 +25,24 @@
                 document.write('<span class="cell header">' + i + '</span>');
             }
             document.write('<br>');
-            // TODO: Write two nested for loops to output the rest of the multiplication table
+
+            // outside loop - determines and writes number of rows
+            for (let i = 0; i <=10; i++) {
+
+              // first, mark and write row header using outside loop
+              document.write('<span class="cell header">' + i + '</span>');
+
+              // next, run inside loop that writes the row number times 0 - 10
+              for (let j = 0; j <=10; j++)  {
+                document.write('<span class="cell">' + (i * j) + '</span>');
+              }
+                document.write('<br>');
+            }
+
+
+
         </script>
-                    <!-- Below is navigation and comments added after the fact.  Last edit 8/2/2019-->
-<!-- Note to self:  add the following html code to the header on new pages:
-<link rel = "stylesheet"
-   type = "text/css"
-   href = "style.css" >
-
-   And then make sure to copy over the style.css sheet.  ;-)
-   -->
-<hr>
-<hr>
-<!-- Below is sidebar nav adapted from https://www.w3schools.com/howto/howto_js_off-canvas.asp-->
-<!-- Use button to open the sidenav -->
-
-<button onclick="openNav()">Click for More Projects</button>
-
-
-<div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p>Current: Interactive Random Gif Button.</p>
-    <hr>
-    <p>Previous: My first Interactive Web Page.<p>
-    <a href="https://Janell.gitlab.io/s_click-handlers">Previous Projext</a>
-    <hr>
-    <p>Next: Practicing Loops.</p>
-    <a href="https://Janell.gitlab.io/panda-page">Next Projext - correct link pls</a>
-  
-  <br>
-</div>
-
-<script>
-/* Set the width of the side navigation to 250px  */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-            <!-- Below is navigation and comments added after the fact.  Last edit 8/2/2019-->
+                    <!-- Below is navigation for the sidebar.  Last edit 8/2/2019-->
 <!-- Note to self:  add the following html code to the header on new pages:
 <link rel = "stylesheet"
    type = "text/css"
@@ -87,10 +62,10 @@ function closeNav() {
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <p>Current: Multiplication Table.</p>
     <hr>
-    <p>Previous: Cute Animals Enjoying the Snow.<p>
+    <p>Previous: Cute Animals in the Snow - random gif button.<p>
     <a href="https://Janell.gitlab.io/panda-page">Previous Projext</a>
     <hr>
-    <p>Next: Practicing Loops.</p>
+    <p>Next: To Be Determined.</p>
     <a href="https://Janell.gitlab.io/multiplication-table">Next Projext - To Be Determined</a>
   
   <br>
@@ -107,7 +82,6 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-
 <!-- Bonus
 For an additional challenge:
 
