@@ -21,52 +21,53 @@
     <h3>Please enter table size and click "Submit" (don't hit enter)</h3>
     <p>Default is 10</p>
 
-    <form >
-      <input type="number" id="clientInput" value = 10>
+    <form>
+      <input type="number" id="clientInput" value="10" />
     </form>
-      <button onclick = "multiplicationtable()" id = "clientSubmit">Click to Submit</button>
-      <br>
-    <div id = "wheretablegoes"></div>
-  <script>
-    function multiplicationtable(){
-      let tablesize = document.getElementById("clientInput").value; //sets table size based on form input
-       
-      // writes first header row
-      table = ""
-      headerrow = "<span class = 'cell header'> X </span>"
-  
+    <button onclick="multiplicationtable()" id="clientSubmit">
+      Click to Submit
+    </button>
+    <br />
+    <div id="wheretablegoes"></div>
+    <script>
+      function multiplicationtable() {
+        let tablesize = document.getElementById("clientInput").value; //sets table size based on form input
+        
+        let table = "";
+        let body = "";
+        let bodyrow = "";
+        let headerrow = "";
+
+        // writes first header row
+        headerrow = "<span class = 'cell header'> X </span>";
         for (let i = 0; i <= tablesize; i++) {
-          headerrow = headerrow + "<span class= 'cell header'>" + i + "</span>" 
+          headerrow = headerrow + "<span class= 'cell header'>" + i + "</span>";
         }
         headerrow = headerrow + "<br>";
         table = table + headerrow;
-      
-      let body = ""
-      let bodyrow = ""
 
-      // outside loop - determines and writes number of rows
-        for (let i = 0; i <=tablesize; i++) {
-          bodyrow = bodyrow + "<span class= 'cell header'>" + i + "</span>"
-        // first, mark and write row header using outside loop
+        // outside loop - determines and writes number of rows
+        for (let i = 0; i <= tablesize; i++) {
+
+           // first write the row's header using outside loop
+          bodyrow = bodyrow + "<span class= 'cell header'>" + i + "</span>";
 
           // next, run inside loop that writes the row number times 0 - (tablesize)
-          for (let j = 0; j <=(tablesize); j++)  {
-            bodyrow = bodyrow + "<span class= 'cell '>" + (i*j) + "</span>"
+          for (let j = 0; j <= tablesize; j++) {
+            bodyrow = bodyrow + "<span class= 'cell'>" + (i * j) + "</span>";
           }
 
-          bodyrow += "<br>" //break at the end of every row
-          body += bodyrow //add rows to body of table
-          bodyrow = "" //start new row
+          bodyrow += "<br>"; //break at the end of every row
+          body += bodyrow; //add rows to body of table
+          bodyrow = ""; //start new row
         }
-        table += body
-      document.getElementById("wheretablegoes").innerHTML = table
-    }
-    </script>
- 
 
-    
-    
-   <!--- Below is navigation for the sidebar.  Last edit 8/2/2019-->
+        table += body; //adds body of table to already created header row
+        document.getElementById("wheretablegoes").innerHTML = table; //puts the table on document
+      }
+    </script>
+
+    <!--- Below is navigation for the sidebar.  Last edit 8/2/2019-->
 
     <!-- Note to self:  add the following html code to the header on new pages:
     <link rel = "stylesheet"
@@ -116,10 +117,7 @@
     <!-- Bonus
 For an additional challenge:
 
-Provide controls to allow generating tables of different sizes (e.g. 12x12, 16x16)
 Provide controls to change the colors or styles of the table on the fly.
-Submission
-Push your code into your GitLab repository and use the GitLab Pages feature to allow your site to be viewed directly. Please submit the published gitlab pages url below.
 !-->
   </body>
 </html>
