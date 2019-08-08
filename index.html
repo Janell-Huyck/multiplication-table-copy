@@ -1,95 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Multiplication Table</title>
-        <style>
-            .cell {
-                display: inline-block;
-                width: 30px; height: 30px;
-                text-align: right;
-            }
-            .header {
-                background: lightblue;
-            }
-        </style>
-        <link rel = "stylesheet"
-        type = "text/css"
-        href = "style.css">
-    </head>
-    <body>
-        <h1>Multiplication Table</h1>
-        <script>
-            // output the header row
-            document.write('<span class="cell header">&times;</span>');
-            for (let i = 0; i <= 10; i++) {
-                document.write('<span class="cell header">' + i + '</span>');
-            }
-            document.write('<br>');
+  <head>
+    <title>Multiplication Table</title>
+    <style>
+      .cell {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        text-align: right;
+      }
+      .header {
+        background: lightblue;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Multiplication Table</h1>
+    <!--create an input button that will eventually determine table sizes-->
+    <h3>Please enter table size and click "Submit" (don't hit enter)</h3>
+    <p>Default is 10</p>
 
-            // outside loop - determines and writes number of rows
-            for (let i = 0; i <=10; i++) {
+    <form >
+      <input type="number" id="clientInput" value = 10>
+    </form>
+      <button onclick = "multiplicationtable()" id = "clientSubmit">Click to Submit</button>
+      <br>
+    <div id = "wheretablegoes"></div>
+  <script>
+    function multiplicationtable(){
+      let tablesize = document.getElementById("clientInput").value; //sets table size based on form input
+       
+      // writes first header row
+      table = ""
+      headerrow = "<span class = 'cell header'> X </span>"
+  
+        for (let i = 0; i <= tablesize; i++) {
+          headerrow = headerrow + "<span class= 'cell header'>" + i + "</span>" 
+        }
+        headerrow = headerrow + "<br>";
+        table = table + headerrow;
+      
+      let body = ""
+      let bodyrow = ""
 
-              // first, mark and write row header using outside loop
-              document.write('<span class="cell header">' + i + '</span>');
+      // outside loop - determines and writes number of rows
+        for (let i = 0; i <=tablesize; i++) {
+          bodyrow = bodyrow + "<span class= 'cell header'>" + i + "</span>"
+        // first, mark and write row header using outside loop
 
-              // next, run inside loop that writes the row number times 0 - 10
-              for (let j = 0; j <=10; j++)  {
-                document.write('<span class="cell">' + (i * j) + '</span>');
-              }
-                document.write('<br>');
-            }
+          // next, run inside loop that writes the row number times 0 - (tablesize)
+          for (let j = 0; j <=(tablesize); j++)  {
+            bodyrow = bodyrow + "<span class= 'cell '>" + (i*j) + "</span>"
+          }
 
+          bodyrow += "<br>" //break at the end of every row
+          body += bodyrow //add rows to body of table
+          bodyrow = "" //start new row
+        }
+        table += body
+      document.getElementById("wheretablegoes").innerHTML = table
+    }
+    </script>
+ 
 
+    
+    
+   <!--- Below is navigation for the sidebar.  Last edit 8/2/2019-->
 
-        </script>
-                    <!-- Below is navigation for the sidebar.  Last edit 8/2/2019-->
-<!-- Note to self:  add the following html code to the header on new pages:
-<link rel = "stylesheet"
-   type = "text/css"
-   href = "style.css" >
+    <!-- Note to self:  add the following html code to the header on new pages:
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "style.css" >
 
    And then make sure to copy over the style.css sheet.  ;-)
    -->
-<hr>
-<hr>
-<!-- Below is sidebar nav adapted from https://www.w3schools.com/howto/howto_js_off-canvas.asp-->
-<!-- Use button to open the sidenav -->
+    <hr />
+    <hr />
+    <!-- Below is sidebar nav adapted from https://www.w3schools.com/howto/howto_js_off-canvas.asp-->
+    <!-- Use button to open the sidenav -->
 
-<button onclick="openNav()">Click for More Projects</button>
+    <button onclick="openNav()">Click for More Projects</button>
 
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <p>Current: Multiplication Table.</p>
+      <hr />
+      <p>Previous: Cute Animals in the Snow - random gif button.</p>
+      <p>
+        <a href="https://Janell.gitlab.io/panda-page">Previous Projext</a>
+      </p>
 
-<div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p>Current: Multiplication Table.</p>
-    <hr>
-    <p>Previous: Cute Animals in the Snow - random gif button.<p>
-    <a href="https://Janell.gitlab.io/panda-page">Previous Projext</a>
-    <hr>
-    <p>Next: To Be Determined.</p>
-    <a href="https://Janell.gitlab.io/multiplication-table">Next Projext - To Be Determined</a>
-  
-  <br>
-</div>
+      <hr />
+      <p>Next: To Be Determined.</p>
+      <a href="https://Janell.gitlab.io/multiplication-table"
+        >Next Projext - To Be Determined</a
+      >
 
-<script>
-/* Set the width of the side navigation to 250px  */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
+      <br />
+    </div>
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-<!-- Bonus
+    <script>
+      /* Set the width of the side navigation to 250px  */
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+    <!-- Bonus
 For an additional challenge:
 
 Provide controls to allow generating tables of different sizes (e.g. 12x12, 16x16)
 Provide controls to change the colors or styles of the table on the fly.
 Submission
 Push your code into your GitLab repository and use the GitLab Pages feature to allow your site to be viewed directly. Please submit the published gitlab pages url below.
-!--> 
-    </body>
+!-->
+  </body>
 </html>
-
